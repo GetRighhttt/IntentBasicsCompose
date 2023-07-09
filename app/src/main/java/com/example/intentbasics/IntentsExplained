@@ -18,5 +18,9 @@ for example need to show a user's location on a map, or something along those li
 you should use an implicit intent to do so.
 
 Intent Filter
-An intent filter allow us to register our application or to specify that our application can receive
-certain types of intents.
+An intent filter declares the capabilities of its parent component: what an activity or service
+can do and what types of broadcast a receiver can handle. It opens the component to receiving
+intents of the advertised type while filtering out those that aren't meaningful for the component.
+It also allows us to specify what types of intents are application can receive and handle.
+So when we want to share a picture, some text, an email, etc. we can specify this in our Manifest
+file using our intent filters.
