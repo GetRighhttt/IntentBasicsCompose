@@ -36,6 +36,7 @@
         <intent>
             <!--            Passing in our email query for our intent-->
             <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="text/plain" />
         </intent>
 
         <intent>

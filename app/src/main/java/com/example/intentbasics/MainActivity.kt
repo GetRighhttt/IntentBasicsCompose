@@ -88,15 +88,28 @@ class MainActivity : ComponentActivity() {
                     Button(onClick = {
                         val intent = Intent(Intent.ACTION_SEND).apply {
                             type = "text/plain"
-                            putExtra(Intent.EXTRA_EMAIL, arrayOf("stefanbayne@gmail.com"))
-                            putExtra(Intent.EXTRA_SUBJECT, arrayOf("Test Email"))
-                            putExtra(Intent.EXTRA_TEXT, arrayOf("This is the body of the email..."))
+                            putExtra(
+                                Intent.EXTRA_EMAIL, arrayOf(
+                                    "stefanbayne@gmail.com",
+                                    "sfcbayne@yahoo.com",
+                                    "stb9395@yahoo.com",
+                                    "vincebaynejr@gmail.com",
+                                    "ayeshawhitely@outlook.com"
+                                )
+                            )
+                            putExtra(Intent.EXTRA_SUBJECT, "Sending Email from My Application!")
+                            putExtra(
+                                Intent.EXTRA_TEXT,
+                                "Hey! Let me know if you guys receive this email! " +
+                                        "I'm sending this from an application on my computer " +
+                                        "that I am using to practice sharing information!"
+                            )
                         }
-                        if(intent.resolveActivity(packageManager) != null) {
+                        if (intent.resolveActivity(packageManager) != null) {
                             startActivity(intent)
                         }
                     }) {
-                        Text(text = "Click for implicit!")
+                        Text(text = "Send Email!")
                     }
                 }
             }
