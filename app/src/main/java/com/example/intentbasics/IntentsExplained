@@ -1,0 +1,19 @@
+According to Google Developers:
+"An intent is a messaging object you can use to request an action from another app component."
+
+There are 3 fundamentals ways in android in which you will most often see intents used with Android
+components:
+1. Starting an activity
+2. Starting a service
+3. Delivering a broadcast
+
+Intent Types:
+1. Explicit Intents: used to specify which application will satisfy the intent by supplying the
+app's package name or a fully-qualified component class. These intents are typically used when we
+specifically know exactly which component in our application or what we "intend" to do in our app.
+
+2. Implicit Intents: used when we do not name a specific component in our application, but instead
+declare a general action to perform, which allows a component from another app to handle it. If you
+for example need to show a user's location on a map, open another application from your own
+application, trigger some music to be played from your application where you need to open another
+application, or something along those lines, you should use an implicit intent to do so.
