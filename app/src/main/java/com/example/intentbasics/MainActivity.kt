@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     /*
-                    Now we will show how we can declare Explicit intents in various ways..
+                    Now we will show how we can declare EXPLICIT intents in various ways..
                      */
 
                     // regular explicit intent to open another activity using also scope function
@@ -73,6 +73,30 @@ class MainActivity : ComponentActivity() {
                         }
                     }) {
                         Text(text = "Open Youtube")
+                    }
+
+                    /*
+                    Now we will show how we can declare IMPLICIT intents...
+                     */
+
+                    /*
+                    Here we will show how we can send an email from out application by specifying
+                    the type, and using intent extras to send parameters that can be used to pass
+                    information with intents. We also pass in queries using resolve
+                    Activity with this intent.
+                     */
+                    Button(onClick = {
+                        val intent = Intent(Intent.ACTION_SEND).apply {
+                            type = "text/plain"
+                            putExtra(Intent.EXTRA_EMAIL, arrayOf("stefanbayne@gmail.com"))
+                            putExtra(Intent.EXTRA_SUBJECT, arrayOf("Test Email"))
+                            putExtra(Intent.EXTRA_TEXT, arrayOf("This is the body of the email..."))
+                        }
+                        if(intent.resolveActivity(packageManager) != null) {
+                            startActivity(intent)
+                        }
+                    }) {
+                        Text(text = "Click for implicit!")
                     }
                 }
             }

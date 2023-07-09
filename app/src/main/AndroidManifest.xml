@@ -15,7 +15,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.IntentBasics">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +22,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IntentReceivedActivity"
+        <activity
+            android:name=".IntentReceivedActivity"
             android:exported="true"
             android:theme="@style/Theme.IntentBasics">
 
         </activity>
     </application>
 
+    <!--    Used to specify queries for resolve activity.-->
+    <queries>
+
+        <intent>
+            <!--            Passing in our email query for our intent-->
+            <action android:name="android.intent.action.SEND" />
+        </intent>
+
+        <intent>
+            <!--            Opening chrome and youtube.-->
+            <action android:name="android.intent.action.MAIN" />
+        </intent>
+
+    </queries>
 </manifest>
