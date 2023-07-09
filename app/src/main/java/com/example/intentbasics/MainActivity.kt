@@ -93,8 +93,7 @@ class MainActivity : ComponentActivity() {
                                     "stefanbayne@gmail.com",
                                     "sfcbayne@yahoo.com",
                                     "stb9395@yahoo.com",
-                                    "vincebaynejr@gmail.com",
-                                    "ayeshawhitely@outlook.com"
+                                    "vincebaynejr@gmail.com"
                                 )
                             )
                             putExtra(Intent.EXTRA_SUBJECT, "Sending Email from My Application!")

@@ -16,3 +16,7 @@ specifically know exactly which component in our application or what we "intend"
 declare a general action to perform, which allows a component from another app to handle it. If you
 for example need to show a user's location on a map, or something along those lines,
 you should use an implicit intent to do so.
+
+Intent Filter
+An intent filter allow us to register our application or to specify that our application can receive
+certain types of intents.
