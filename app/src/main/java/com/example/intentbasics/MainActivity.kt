@@ -1,5 +1,6 @@
 package com.example.intentbasics
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -27,8 +28,11 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
-                    // here we will demonstrate various forms of intents that we can use
-                    // regular explicit intent to open another activity
+                    /*
+                    Now we will show how we can declare Explicit intents in various ways..
+                     */
+
+                    // regular explicit intent to open another activity using also scope function
                     Button(onClick = {
                         Intent(this@MainActivity, IntentReceivedActivity::class.java)
                             .also {
@@ -38,16 +42,35 @@ class MainActivity : ComponentActivity() {
                         Text(text = "Go to next activity!")
                     }
 
-                    // implicit intent to open another application from your application in try-catch
+                    /*
+                    Intent to open google chrome from our application
+                    We are using adb (android debug bridge) to get the package name from the terminal
+                    We also wrap this intent in a variable so that we can use it again, and error
+                    handle with try-catch
+                     */
                     Button(onClick = {
-
+                        val intent = Intent(Intent.ACTION_MAIN)
+                        intent.`package` = "com.android.chrome"
+                        try {
+                            startActivity(intent)
+                        } catch (e: ActivityNotFoundException) {
+                            e.printStackTrace()
+                        }
                     }) {
                         Text(text = "Open Chrome!")
                     }
 
-                    // implicit intent to open app using if for null check and resolve
+                    /*
+                    Intent to launch youtube with if statement to see if app is installed,
+                    and we use resolve Activity to do so.
+                     */
                     Button(onClick = {
-
+                        Intent(Intent.ACTION_MAIN).also {
+                            it.`package` = "com.google.android.youtube"
+                            if (it.resolveActivity(packageManager) != null) {
+                                startActivity(it)
+                            }
+                        }
                     }) {
                         Text(text = "Open Youtube")
                     }

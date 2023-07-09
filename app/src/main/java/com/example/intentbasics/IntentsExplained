@@ -14,6 +14,5 @@ specifically know exactly which component in our application or what we "intend"
 
 2. Implicit Intents: used when we do not name a specific component in our application, but instead
 declare a general action to perform, which allows a component from another app to handle it. If you
-for example need to show a user's location on a map, open another application from your own
-application, trigger some music to be played from your application where you need to open another
-application, or something along those lines, you should use an implicit intent to do so.
+for example need to show a user's location on a map, or something along those lines,
+you should use an implicit intent to do so.
